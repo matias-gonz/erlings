@@ -20,7 +20,14 @@ reverse([Head|Tail], NewList) ->
   reverse(Tail, [Head | NewList]).
 
 rmconsecutive(List) ->
-  put_your_solution_here.
+  rmconsecutive(List, [], none).
+
+rmconsecutive([], NewList, _) ->
+  reverse(NewList);
+rmconsecutive([H|T], NewList, H) ->
+  rmconsecutive(T, NewList, H);
+rmconsecutive([H|T], NewList, _) ->
+  rmconsecutive(T, [H|NewList], H).
 
 even_fib_numbers() ->
   put_your_solution_here.
