@@ -12,7 +12,12 @@
          last_letter/1]).
 
 reverse(List) ->
-  put_your_solution_here.
+  reverse(List, []).
+
+reverse([], NewList) ->
+  NewList;
+reverse([Head|Tail], NewList) ->
+  reverse(Tail, [Head | NewList]).
 
 rmconsecutive(List) ->
   put_your_solution_here.
