@@ -41,13 +41,13 @@ map_add_1_test() ->
   Res = #{a => 2, b => 3, c => 4},
   ?assertEqual(Res, maps_exercises:map(F, Map)).
 
-% to_map_test() ->
-%   List = [2, 23, a],
-%   Map = #{1 => 2, 2 => 23, 3 => a},
-%   ?assertEqual(Map, maps_exercises:to_map(List)).
+to_map_test() ->
+  List = [2, 23, a],
+  Map = #{1 => 2, 2 => 23, 3 => a},
+  ?assertEqual(Map, maps_exercises:to_map(List)).
 
-% to_map_empty_test() ->
-%   ?assertEqual(#{}, maps_exercises:to_map([])).
+to_map_empty_test() ->
+  ?assertEqual(#{}, maps_exercises:to_map([])).
 
 % records_to_maps_test() ->
 %   Records = [#person{name="Pepe", age=28}, #person{name="Luis", age=77}],

@@ -27,7 +27,8 @@ map(Function, Map) ->
   maps:fold(fun(Key, Value, NewMap) -> maps:put(Key, Function(Value), NewMap) end, #{}, Map).
 
 to_map(List) ->
-  put_your_solution_here.
+  {NewMap, _} = lists:foldl(fun(Element, {Map, Key}) -> {maps:put(Key, Element, Map), Key+1} end, {#{}, 1}, List),
+  NewMap.
 
 records_to_maps(Records) ->
   put_your_solution_here.
