@@ -36,12 +36,12 @@ run_length_encoding_test() ->
   Res = [{4, a}, {1, b}, {2, c}, {2, a}, {1, d}, {4, e}],
   ?assertEqual(Res, lists_exercises:run_length_encode(List)).
 
-% any_is_even_test() ->
-%   List = [2, 3, 4, 1, 5, 6, 9],
-%   ?assert(lists_exercises:list_any(fun(X) -> X rem 2 == 0 end, List)).
+any_is_even_test() ->
+  List = [2, 3, 4, 1, 5, 6, 9],
+  ?assert(lists_exercises:list_any(fun(X) -> X rem 2 == 0 end, List)).
 
-% any_empty_test() ->
-%     ?assertNot(lists_exercises:list_any(fun(X) -> X == 20 end, [])).
+any_empty_test() ->
+    ?assertNot(lists_exercises:list_any(fun(X) -> X == 20 end, [])).
 
 % anagram_test() ->
 %     List = ["Panel", "plane", "Penal", "PlenA", "Nepal", "ArgentinA", "Laos"],

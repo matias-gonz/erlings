@@ -7,7 +7,7 @@
          foldl/2,
          rotate/2,
          run_length_encode/1,
-         list_any/1,
+         list_any/2,
          anagram/2,
          last_letter/1]).
 
@@ -71,8 +71,15 @@ run_length_encode([H|T], EncodedList) ->
   run_length_encode(T, [{1,H}] ++ EncodedList).
 
 
-list_any(N) ->
-  put_your_solution_here.
+list_any(_, _, []) ->
+  false;
+list_any(_, true, _) ->
+  true;
+list_any(Fun, false, [H|T]) ->
+  list_any(Fun, Fun(H), T).
+
+list_any(Fun, List) ->
+  list_any(Fun, false, List).
 
 anagram(List, S) -> 
   put_your_solution_here.
