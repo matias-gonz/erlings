@@ -20,16 +20,16 @@ return_values_test()->
   List = [1,5,3],
   ?assertEqual(List, maps_exercises:return_values(Map)).
 
-% merge_empty_test() ->
-%   Map = #{a => 1, b => 2, c => 3},
-%   ?assertEqual(Map, maps_exercises:merge(#{}, Map)),
-%   ?assertEqual(Map, maps_exercises:merge(Map, #{})).
+merge_empty_test() ->
+  Map = #{a => 1, b => 2, c => 3},
+  ?assertEqual(Map, maps_exercises:merge(#{}, Map)),
+  ?assertEqual(Map, maps_exercises:merge(Map, #{})).
 
-% merge_update_test() ->
-%   Map1 = #{a => 1, b => 2, c => 3},
-%   Map2 = #{b => 6, d => 4},
-%   Map3 = #{a => 1, b => 6, c => 3, d => 4},
-%   ?assertEqual(Map3, maps_exercises:merge(Map1, Map2)).
+merge_update_test() ->
+  Map1 = #{a => 1, b => 2, c => 3},
+  Map2 = #{b => 6, d => 4},
+  Map3 = #{a => 1, b => 6, c => 3, d => 4},
+  ?assertEqual(Map3, maps_exercises:merge(Map1, Map2)).
 
 % map_empty_map_test() ->
 %   F = fun(X) -> X + 1 end,
