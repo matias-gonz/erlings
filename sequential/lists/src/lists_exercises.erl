@@ -46,7 +46,7 @@ foldl(Fun, Acc, [H|T]) ->
   foldl(Fun, Fun(Acc, H), T).
 
 foldl(Fun, List) ->
-  put_your_solution_here.
+  foldl(Fun, 0, List).
 
 rotate(List, Tuple) ->
   put_your_solution_here.

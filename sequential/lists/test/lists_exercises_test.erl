@@ -19,9 +19,9 @@ foldl_multiply_test() ->
   Multiply = fun (A, B) -> A * B end,
   ?assertEqual(300, lists_exercises:foldl(Multiply, 10, [2, 5, 3])).
 
-% foldl_add_without_acc_test() ->
-%   Add = fun (A, B) -> A + B end,
-%   ?assertEqual(100, lists_exercises:foldl(Add, [20, 20, 10, 50])).
+foldl_add_without_acc_test() ->
+  Add = fun (A, B) -> A + B end,
+  ?assertEqual(100, lists_exercises:foldl(Add, [20, 20, 10, 50])).
 
 % rotate_list_right_test() ->
 %   Res = [4, 5, 1, 2, 3],
