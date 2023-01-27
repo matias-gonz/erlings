@@ -10,10 +10,10 @@ min_value_test()->
   Map = #{a=> 5, b=> 3, c=> 4, d=>2},
   ?assertEqual(2, maps_exercises:min_value(Map)).
 
-% sort_by_keys_test()->
-%   Map = #{1 => a, 5=> c, 3=> d, 7=> f},
-%   OrderedM = #{1=>a,3=>d,5=>c,7=>f},
-%   ?assertEqual(OrderedM, maps_exercises:sort_by_keys(Map)).
+sort_by_keys_test()->
+  Map = #{1 => a, 5=> c, 3=> d, 7=> f},
+  OrderedM = #{1=>a,3=>d,5=>c,7=>f},
+  ?assertEqual(OrderedM, maps_exercises:sort_by_keys(Map)).
 
 % return_values_test()->
 %   Map = #{a=>1, b=>5, c=>3},

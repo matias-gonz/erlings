@@ -14,7 +14,8 @@ min_value(Map)->
   maps:fold(fun(_, V, Min) -> min(V,Min) end, Element, Map).
 
 sort_by_keys(Map)->
-  put_your_solution_here.
+  Keys = lists:sort(maps:keys(Map)),
+  maps:from_list([{Key, maps:get(Key,Map)} || Key <- Keys]).
 
 return_values(Map)->
   put_your_solution_here.
