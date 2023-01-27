@@ -35,7 +35,13 @@ records_to_maps(Records) ->
   lists:map(fun(Person) -> #{age => Person#person.age, name => Person#person.name} end, Records).
 
 maps_to_records(Maps) ->
-  put_your_solution_here.
+  maps_to_records(Maps,[]).
+
+maps_to_records([], Acc) ->
+  Acc;
+maps_to_records([H|T], Acc) ->
+  io:format("~p\n",[[#person{name=maps:get(name, H), age=maps:get(age, H)}]]),
+  maps_to_records(T, [#person{name=maps:get(name, H), age=maps:get(age, H)} | Acc]).
 
 proplist_to_map(Proplist) ->
   put_your_solution_here.

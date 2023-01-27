@@ -57,13 +57,13 @@ records_to_maps_test() ->
 records_to_maps_empty_test() ->
   ?assertEqual([], maps_exercises:records_to_maps([])).
 
-% maps_to_records_test() ->
-%   Records = [#person{name="Pepe", age=28}, #person{name="Luis", age=77}],
-%   Maps = [#{age => 77,name => "Luis"}, #{age => 28,name => "Pepe"}],
-%   ?assertEqual(Records, maps_exercises:maps_to_records(Maps)).
+maps_to_records_test() ->
+  Records = [#person{name="Pepe", age=28}, #person{name="Luis", age=77}],
+  Maps = [#{age => 77,name => "Luis"}, #{age => 28,name => "Pepe"}],
+  ?assertEqual(Records, maps_exercises:maps_to_records(Maps)).
 
-% maps_to_records_empty_test() ->
-%   ?assertEqual([], maps_exercises:maps_to_records([])).
+maps_to_records_empty_test() ->
+  ?assertEqual([], maps_exercises:maps_to_records([])).
 
 % proplist_to_map_test() ->
 %   Proplist = [{firstname, "Pedro"}, {lastname, "Sanches"}, {age, 11}],
