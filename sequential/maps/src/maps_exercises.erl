@@ -4,8 +4,14 @@
 sum_of_values(Map) ->
   maps:fold(fun(_, V, Sum) -> V+Sum end, 0, Map).
 
+min(A,B) when A < B ->
+  A;
+min(_,B) ->
+  B.
+
 min_value(Map)->
-  put_your_solution_here.
+  [Element|_] = maps:values(Map),
+  maps:fold(fun(_, V, Min) -> min(V,Min) end, Element, Map).
 
 sort_by_keys(Map)->
   put_your_solution_here.
