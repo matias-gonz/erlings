@@ -30,7 +30,15 @@ rmconsecutive([H|T], NewList, _) ->
   rmconsecutive(T, [H|NewList], H).
 
 even_fib_numbers() ->
-  put_your_solution_here.
+  even_fib_numbers(1, 2, 0).
+
+even_fib_numbers(_, B, Sum) when B >= 4000000 ->
+  Sum;
+even_fib_numbers(A, B, Sum) when B rem 2 =:= 0 ->
+  even_fib_numbers(B, A+B, Sum+B);
+even_fib_numbers(A, B, Sum) ->
+  even_fib_numbers(B, A+B, Sum).
+
 
 foldl(Fun, Acc, List) ->
   put_your_solution_here.

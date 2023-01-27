@@ -12,8 +12,8 @@ rmconsecutive_test() ->
   List = [1, 1, 1, 2, 3, 4, 1, 1, 1, 3],
   ?assertEqual([1,2,3,4,1,3], lists_exercises:rmconsecutive(List)).
 
-% even_fib_numbers_test() ->
-%   ?assertEqual(4613732, lists_exercises:even_fib_numbers()).
+even_fib_numbers_test() ->
+  ?assertEqual(4613732, lists_exercises:even_fib_numbers()).
 
 % foldl_multiply_test() ->
 %   Multiply = fun (A, B) -> A * B end,
