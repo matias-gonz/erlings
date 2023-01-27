@@ -81,8 +81,13 @@ list_any(Fun, false, [H|T]) ->
 list_any(Fun, List) ->
   list_any(Fun, false, List).
 
+is_anagram(A,A) ->
+  false;
+is_anagram(A, B) ->
+  lists:sort(A) == lists:sort(B).
+
 anagram(List, S) -> 
-  put_your_solution_here.
+  [X || X <- List, is_anagram(string:lowercase(S),string:lowercase(X))].
 
 last_letter(List) ->
   put_your_solution_here.
