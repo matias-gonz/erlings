@@ -50,8 +50,15 @@ foldl(_, List) when length(List) < 2 ->
 foldl(Fun, [A, B | T]) ->
   foldl(Fun, A, [B|T]).
 
-rotate(List, Tuple) ->
-  put_your_solution_here.
+rotate(List, {_, 0}) ->
+  List;
+rotate([H|T], {left, N}) ->
+  L = [H | reverse(T)],
+  rotate(reverse(L), {left, N-1});
+rotate([H|T], {right, N}) ->
+  [Last|TailLast] = reverse([H|T]),
+  rotate([Last | reverse(TailLast)], {right, N-1}).
+
 
 run_length_encode(List) ->
   put_your_solution_here.

@@ -23,13 +23,13 @@ foldl_add_without_acc_test() ->
   Add = fun (A, B) -> A + B end,
   ?assertEqual(100, lists_exercises:foldl(Add, [20, 20, 10, 50])).
 
-% rotate_list_right_test() ->
-%   Res = [4, 5, 1, 2, 3],
-%   ?assertEqual(Res, lists_exercises:rotate([1, 2, 3, 4, 5], {right, 2})).
+rotate_list_right_test() ->
+  Res = [4, 5, 1, 2, 3],
+  ?assertEqual(Res, lists_exercises:rotate([1, 2, 3, 4, 5], {right, 2})).
 
-% rotate_list_left_test() ->
-%   Res = [3, 4, 5, 1, 2],
-%   ?assertEqual(Res, lists_exercises:rotate([1, 2, 3, 4, 5], {left, 2})).
+rotate_list_left_test() ->
+  Res = [3, 4, 5, 1, 2],
+  ?assertEqual(Res, lists_exercises:rotate([1, 2, 3, 4, 5], {left, 2})).
 
 % run_length_encoding_test() ->
 %   List = [a, a, a, a, b, c, c, a, a, d, e, e, e, e],
