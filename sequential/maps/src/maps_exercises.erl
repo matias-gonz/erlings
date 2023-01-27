@@ -2,7 +2,7 @@
 -export([sum_of_values/1,return_values/1,sort_by_keys/1,min_value/1,merge/2, map/2, to_map/1, records_to_maps/1, maps_to_records/1, proplist_to_map/1]).
 
 sum_of_values(Map) ->
-  put_your_solution_here.
+  maps:fold(fun(_, V, Sum) -> V+Sum end, 0, Map).
 
 min_value(Map)->
   put_your_solution_here.
