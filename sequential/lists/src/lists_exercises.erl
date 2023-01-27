@@ -45,8 +45,10 @@ foldl(_, Acc, []) ->
 foldl(Fun, Acc, [H|T]) ->
   foldl(Fun, Fun(Acc, H), T).
 
-foldl(Fun, List) ->
-  foldl(Fun, 0, List).
+foldl(_, List) when length(List) < 2 ->
+  undefined;
+foldl(Fun, [A, B | T]) ->
+  foldl(Fun, A, [B|T]).
 
 rotate(List, Tuple) ->
   put_your_solution_here.
