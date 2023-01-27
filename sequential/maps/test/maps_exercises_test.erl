@@ -31,15 +31,15 @@ merge_update_test() ->
   Map3 = #{a => 1, b => 6, c => 3, d => 4},
   ?assertEqual(Map3, maps_exercises:merge(Map1, Map2)).
 
-% map_empty_map_test() ->
-%   F = fun(X) -> X + 1 end,
-%   ?assertEqual(#{}, maps_exercises:map(F, #{})).
+map_empty_map_test() ->
+  F = fun(X) -> X + 1 end,
+  ?assertEqual(#{}, maps_exercises:map(F, #{})).
 
-% map_add_1_test() ->
-%   F = fun(X) -> X + 1 end,
-%   Map = #{a => 1, b => 2, c => 3},
-%   Res = #{a => 2, b => 3, c => 4},
-%   ?assertEqual(Res, maps_exercises:map(F, Map)).
+map_add_1_test() ->
+  F = fun(X) -> X + 1 end,
+  Map = #{a => 1, b => 2, c => 3},
+  Res = #{a => 2, b => 3, c => 4},
+  ?assertEqual(Res, maps_exercises:map(F, Map)).
 
 % to_map_test() ->
 %   List = [2, 23, a],

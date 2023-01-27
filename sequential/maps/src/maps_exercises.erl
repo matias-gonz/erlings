@@ -24,7 +24,7 @@ merge(M1, M2) ->
   maps:fold(fun(Key, Value, MergedMap) -> maps:put(Key, Value, MergedMap) end, M1, M2).
 
 map(Function, Map) ->
-  put_your_solution_here.
+  maps:fold(fun(Key, Value, NewMap) -> maps:put(Key, Function(Value), NewMap) end, #{}, Map).
 
 to_map(List) ->
   put_your_solution_here.
