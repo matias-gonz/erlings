@@ -44,4 +44,4 @@ maps_to_records([H|T], Acc) ->
   maps_to_records(T, [#person{name=maps:get(name, H), age=maps:get(age, H)} | Acc]).
 
 proplist_to_map(Proplist) ->
-  put_your_solution_here.
+  lists:foldl(fun({Key, Value}, Map) -> maps:put(Key, Value, Map) end, #{}, Proplist).
