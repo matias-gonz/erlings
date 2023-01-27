@@ -54,3 +54,8 @@ anagram_test() ->
 %           "Yemen", "Nepal", "Morocco", "Oman", "Portugal", "Spain"],
 %   Res = ["Afghanistan", "Nigeria", "Albania", "Algeria", "Andorra"],
 %   ?assertEqual(Res, lists_exercises:last_letter(List)).
+
+last_letter_test()->
+  List = ["hola", "jiji", "alo", "or", "arroz", "zorro", "roma"],
+  Res = ["hola","alo","or","roma"],
+  ?assertEqual(Res, lists_exercises:last_letter(List)).
