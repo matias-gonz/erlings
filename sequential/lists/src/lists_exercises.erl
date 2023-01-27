@@ -60,8 +60,16 @@ rotate([H|T], {right, N}) ->
   rotate([Last | reverse(TailLast)], {right, N-1}).
 
 
-run_length_encode(List) ->
-  put_your_solution_here.
+run_length_encode(L) ->
+  run_length_encode(L,[]).
+
+run_length_encode([], EncodedList) ->
+  reverse(EncodedList);
+run_length_encode([H|T], [{N, H}|EncodedList]) ->
+  run_length_encode(T, [{N+1, H}|EncodedList]);
+run_length_encode([H|T], EncodedList) ->
+  run_length_encode(T, [{1,H}] ++ EncodedList).
+
 
 list_any(N) ->
   put_your_solution_here.
