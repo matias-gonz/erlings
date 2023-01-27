@@ -91,7 +91,6 @@ anagram(List, S) ->
 
 last_letter([H|T]) ->
   Letter = lists:sublist(reverse(H),1,1),
-  io:fwrite("~p\n",[Letter]),
   last_letter(T,[H], Letter).
 
 last_letter([],List,_) ->
@@ -99,11 +98,9 @@ last_letter([],List,_) ->
 last_letter([Word|T], List, Letter) ->
   FirstLetter = lists:sublist(Word,1,1),
   StartsWithLastLetter = string:lowercase(FirstLetter) =:= string:lowercase(Letter),
-  io:fwrite("~p\n",[Word]),
   case StartsWithLastLetter of
         true ->
             LastLetter = lists:sublist(reverse(Word),1,1),
-            io:fwrite("~p\n",[LastLetter]),
             last_letter(T, [Word|List], LastLetter);
         false ->
             last_letter(T,List,Letter)

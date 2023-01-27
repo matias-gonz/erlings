@@ -8,6 +8,12 @@ process_operation_withdraw_ok_test() ->
   Res = {213, 100},
   ?assertEqual(Res, bank_account:process_operation(Bank, Op)).
 
+process_operation_deposit_ok_test() ->
+  Bank = [{213, 150}, {214, 0}],
+  Op = {214, deposit, 50},
+  Res = {214, 50},
+  ?assertEqual(Res, bank_account:process_operation(Bank, Op)).
+
 process_operation_not_found_test() ->
   Bank = [{214, 0}],
   Op = {213, deposit, 20},

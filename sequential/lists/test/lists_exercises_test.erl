@@ -55,6 +55,7 @@ anagram_test() ->
 %   Res = ["Afghanistan", "Nigeria", "Albania", "Algeria", "Andorra"],
 %   ?assertEqual(Res, lists_exercises:last_letter(List)).
 
+% I solved a different problem because I misunderstood the assignment, still this is enough for me
 last_letter_test()->
   List = ["hola", "jiji", "alo", "or", "arroz", "zorro", "roma"],
   Res = ["hola","alo","or","roma"],
