@@ -40,8 +40,10 @@ even_fib_numbers(A, B, Sum) ->
   even_fib_numbers(B, A+B, Sum).
 
 
-foldl(Fun, Acc, List) ->
-  put_your_solution_here.
+foldl(_, Acc, []) ->
+  Acc;
+foldl(Fun, Acc, [H|T]) ->
+  foldl(Fun, Fun(Acc, H), T).
 
 foldl(Fun, List) ->
   put_your_solution_here.
