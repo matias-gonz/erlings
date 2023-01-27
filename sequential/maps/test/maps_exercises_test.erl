@@ -15,10 +15,10 @@ sort_by_keys_test()->
   OrderedM = #{1=>a,3=>d,5=>c,7=>f},
   ?assertEqual(OrderedM, maps_exercises:sort_by_keys(Map)).
 
-% return_values_test()->
-%   Map = #{a=>1, b=>5, c=>3},
-%   List = [1,5,3],
-%   ?assertEqual(List, maps_exercises:return_values(Map)).
+return_values_test()->
+  Map = #{a=>1, b=>5, c=>3},
+  List = [1,5,3],
+  ?assertEqual(List, maps_exercises:return_values(Map)).
 
 % merge_empty_test() ->
 %   Map = #{a => 1, b => 2, c => 3},

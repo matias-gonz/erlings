@@ -18,7 +18,7 @@ sort_by_keys(Map)->
   maps:from_list([{Key, maps:get(Key,Map)} || Key <- Keys]).
 
 return_values(Map)->
-  put_your_solution_here.
+  maps:values(Map).
 
 merge(M1, M2) ->
   put_your_solution_here.
