@@ -29,9 +29,13 @@ start_link() ->
 %% Before OTP 18 tuples must be used to specify a child. e.g.
 %% Child :: {Id,StartFunc,Restart,Shutdown,Type,Modules}
 init([]) ->
-  WorkerSup = worker_supervisor_spec,
-  Server = pool_server_spec,
-  {ok, {{supervisor_strategy}, [WorkerSup, Server]}}.
+  WorkerSup = #{id => poolie_worker_sup,
+    start => {poolie_worker_sup, start_link, []}, 
+    restart => permanent, shutdown => 10000, type => supervisor, modules => [poolie_worker_sup]},
+  Server = #{id => poolie_server,
+    start => {poolie_server, start_link, []}, 
+    restart => permanent, shutdown => 10000, type => worker, modules => [poolie_server]},
+  {ok, {{one_for_all, 5, 150}, [WorkerSup, Server]}}.
 
 %%====================================================================
 %% Internal functions

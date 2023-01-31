@@ -35,11 +35,14 @@ init(_Args) ->
   Workers = poolie_worker_sup:add_workers(?N),
   {ok, #state{limit=?N, idle=Workers}}.
 
-handle____({result, {Worker, MFA, Result}}, State) ->
-  put_your_solution_here.
+handle_call({work, MFA}, _From, S = #state{idle=[Worker | Rest]}) -> 
+  Msg = "Request is being processed~n",
+  gen_server:cast(Worker, {work, MFA}),
+  {reply, Msg, S#state{idle=Rest}};
 
-handle_call({work, MFA}, _From, State) -> 
-  put_your_solution_here;
+handle_call({work, _MFA}, _From, State) -> 
+  Msg = "No idle workers at the moment, please try again later~n",
+  {reply, Msg, State};
 
 handle_call(info, _From, S = #state{limit=Limit, idle=Idle}) ->
   IdleWorkers = length(Idle),
@@ -50,6 +53,10 @@ handle_call(stop, _From, State) ->
 
 handle_call(_Request, _From, State) ->
   {reply, ok, State}.
+
+handle_cast({result, {Worker, MFA, Result}}, S = #state{idle=Idle}) ->
+  io:format("Got results for ~p~nResult: ~p~n", [MFA, Result]),
+  {noreply, S#state{idle=[Worker | Idle]}};
 
 handle_cast(_Msg, State) ->
   {noreply, State}.

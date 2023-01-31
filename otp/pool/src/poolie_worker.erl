@@ -18,11 +18,15 @@ start() ->
 init(_Args) ->
   {ok, []}.
 
-handle____({work, MFA = {M, F, A}}, State) ->
-  put_your_solution_here;
+handle_cast({work, MFA = {M, F, A}}, State) ->
+  Result = erlang:apply(M, F, A),
+  gen_server:cast(?SERVER, {result, {self(), MFA, Result}}),
+  {noreply, State};
 
-handle____({work, FA = {F, A}}, State) ->
-  put_your_solution_here.
+handle_cast({work, FA = {F, A}}, State) ->
+  Result = erlang:apply(F, A),
+  gen_server:cast(?SERVER, {result, {self(), FA, Result}}),
+  {noreply, State};
 
 handle_cast(_Msg, State) ->
   {noreply, State}.
